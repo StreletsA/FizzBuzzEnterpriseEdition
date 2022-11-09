@@ -1,5 +1,6 @@
 package com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.math.arithmetics;
 
+import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.natives.NativeIntegerDivider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +45,7 @@ public class IntegerDivider {
 		} else {
 			final double dbFirstNumber = IntToDoubleConverter.Convert(nFirstInteger);
 			final double dbSecondNumber = IntToDoubleConverter.Convert(nSecondInteger);
-			final double dbQuotient = dbFirstNumber / dbSecondNumber;
+			final double dbQuotient = new NativeIntegerDivider().nativeDivide((int) dbFirstNumber, (int) dbSecondNumber);
 			double dbRoundedQuotient = (double) Constants.INTEGER_ORIGIN_ZERO_VALUE;
 			if (this.firstIsSmallerThanSecondDoubleComparator.FirstIsSmallerThanSecond(dbQuotient,
 					(double) Constants.INTEGER_ORIGIN_ZERO_VALUE)) {
